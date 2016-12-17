@@ -1,10 +1,18 @@
+#Global variables
 sitename: Morning Star
 sitesecondname: Sharing Jesus
-tel: +1234567890
+sitetagline: Another fine responsive site template freebie by HTML5 UP.
+orgoverview: A place for all your hand-made Christian novelties.
+orgdescription: |
+  We specialize in planning spiritual events
+  and personalized spiritual merchandises such
+  as hand-made greeting cards, candles and many more.
 
 sass:
   sass_dir: _sass
 
+# Contact
+tel: +1234567890
 social:
   # twitter: https://twitter.com/<username>
   # github: https://github.com/<username>
@@ -12,3 +20,7 @@ social:
   # google-plus-square: https://plus.google.com/u/0/+<username>
   instagram: https://www.instagram.com/morningstarsharingjesus
   email: info@sjmorningstar.com
+
+#Collections
+collections:
+  storeitems:
