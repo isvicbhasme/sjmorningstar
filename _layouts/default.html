@@ -5,30 +5,9 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		{% if page.isLanding %}
-			<title>{{site.sitename}}</title>
-		{% else %}
-			<title>{{page.title}} - {{site.sitename}}</title>
-		{% endif %}
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="/css/ie/html5shiv.js"></script><![endif]-->
-		<script src="/js/jquery.min.js"></script>
-		<script src="/js/jquery.dropotron.min.js"></script>
-		<script src="/js/jquery.scrollgress.min.js"></script>
-		<script src="/js/skel.min.js"></script>
-		<script src="/js/skel-layers.min.js"></script>
-		<script src="/js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="/css/skel.css" />
-			<link rel="stylesheet" href="/css/style.css" />
-			<link rel="stylesheet" href="/css/style-wide.css" />
-		</noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
-	</head>
 	
+	{% include head.html %}
+
 	{% if page.isLanding %}
 		<body class="landing">
 	{% else %}
@@ -36,67 +15,11 @@
 	{% endif %}
 	
 
-		<!-- Header -->
-			{% if page.isLanding %}
-				<header id="header" class="alt">
-			{% else %}
-				<header id="header">
-			{% endif %}
-				<h1><a href="index.html">{{site.sitename}}</a> {{site.sitesecondname}}</h1>
-				<nav id="nav">
-					<ul>
-						<li><a href="/">Home</a></li>
-						<li>
-							<a href="" class="icon fa-angle-down">Layouts</a>
-							<ul>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="elements.html">Elements</a></li>
-								<li>
-									<a href="">Submenu</a>
-									<ul>
-										<li><a href="#">Option One</a></li>
-										<li><a href="#">Option Two</a></li>
-										<li><a href="#">Option Three</a></li>
-										<li><a href="#">Option Four</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li><a href="/contact/">Contact</a></li>
-						<!-- <li><a href="#" class="button">Sign Up</a></li> -->
-					</ul>
-				</nav>
-			</header>
-			
-		{{ content }}
-		<!-- Footer -->
-			<footer id="footer">
-				<ul class="icons">
-			    {% for socloc in site.social %}
-			    {% if socloc[1] %}
-			    {% if socloc[0] == 'email' %}
-			    <li><a target="_blank" href="mailto:{{ socloc[1] }}" class="icon fa-envelope-o"
-			           ><span class="label">E-mail</span></a></li>
-			    {% else %}
-			    <li><a target="_blank" href="{{ socloc[1] }}" class="icon fa-{{ socloc[0] }}"
-			           ><span class="label">{{ socloc[0] }}</span></a></li>
-			    {% endif %}
-			    {% endif %}
-			    {% endfor %}
-			  </ul>
-			  <ul class="copyright">
-			    <li>&copy; {% assign thisyear = site.time | date: "%Y" %}
-			    {% if site.first_published %}
-			      {% capture diff %}{{ site.first_published | minus:thisyear }}{% endcapture %}
-			      {% if diff contains '-' %}{{ site.first_published }},{% endif %}
-			    {% endif %}
-			    {{ thisyear }}
-			    {% if site.owner %}{{ site.owner }}{% else %}{{ site.title }}{% endif %}</li>
-			    <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
-			    <li>Built with: <a href="http://jekyllrb.com" target="_blank">Jekyll</a></li>
-			  </ul>
-			</footer>
+	{% include header.html %}
+		
+	{{ content }}
+	
+	{% include footer.html %}
 
 	</body>
 </html>
