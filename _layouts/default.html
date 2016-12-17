@@ -7,9 +7,9 @@
 <html>
 	<head>
 		{% if page.isLanding %}
-			<title>Alpha by HTML5 UP</title>
+			<title>{{site.sitename}}</title>
 		{% else %}
-			<title>{{page.title}} - Alpha by HTML5 UP</title>
+			<title>{{page.title}} - {{site.sitename}}</title>
 		{% endif %}
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
@@ -41,7 +41,7 @@
 			{% else %}
 				<header id="header">
 			{% endif %}
-				<h1><a href="index.html">Alpha</a> by HTML5 UP</h1>
+				<h1><a href="index.html">{{site.sitename}}</a> {{site.sitesecondname}}</h1>
 				<nav id="nav">
 					<ul>
 						<li><a href="index.html">Home</a></li>
@@ -62,7 +62,8 @@
 								</li>
 							</ul>
 						</li>
-						<li><a href="#" class="button">Sign Up</a></li>
+						<li><a href="contact.html">Contact</a></li>
+						<!-- <li><a href="#" class="button">Sign Up</a></li> -->
 					</ul>
 				</nav>
 			</header>
@@ -71,16 +72,29 @@
 		<!-- Footer -->
 			<footer id="footer">
 				<ul class="icons">
-					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-					<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-					<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
-				</ul>
-				<ul class="copyright">
-					<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
+			    {% for socloc in site.social %}
+			    {% if socloc[1] %}
+			    {% if socloc[0] == 'email' %}
+			    <li><a target="_blank" href="mailto:{{ socloc[1] }}" class="icon fa-envelope-o"
+			           ><span class="label">E-mail</span></a></li>
+			    {% else %}
+			    <li><a target="_blank" href="{{ socloc[1] }}" class="icon fa-{{ socloc[0] }}"
+			           ><span class="label">{{ socloc[0] }}</span></a></li>
+			    {% endif %}
+			    {% endif %}
+			    {% endfor %}
+			  </ul>
+			  <ul class="copyright">
+			    <li>&copy; {% assign thisyear = site.time | date: "%Y" %}
+			    {% if site.first_published %}
+			      {% capture diff %}{{ site.first_published | minus:thisyear }}{% endcapture %}
+			      {% if diff contains '-' %}{{ site.first_published }},{% endif %}
+			    {% endif %}
+			    {{ thisyear }}
+			    {% if site.owner %}{{ site.owner }}{% else %}{{ site.title }}{% endif %}</li>
+			    <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+			    <li>Built with: <a href="http://jekyllrb.com" target="_blank">Jekyll</a></li>
+			  </ul>
 			</footer>
 
 	</body>

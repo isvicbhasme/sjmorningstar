@@ -1,2 +1,13 @@
+sitename: Morning Star
+sitesecondname: Sharing Jesus
+
 sass:
   sass_dir: _sass
+
+social:
+  # twitter: https://twitter.com/<username>
+  # github: https://github.com/<username>
+  facebook: https://www.facebook.com/sjmorningstar
+  # google-plus-square: https://plus.google.com/u/0/+<username>
+  instagram: https://www.instagram.com/morningstarsharingjesus
+  email: info@sjmorningstar.com
