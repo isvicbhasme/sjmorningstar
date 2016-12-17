@@ -6,10 +6,10 @@ title: Contact
 <section id="main" class="container small">
 	<header>
 		<h2>Contact Us</h2>
-		<p>Tell us what you think about our little operation.</p>
+		<p>Tell us what you think about our work.</p>
 	</header>
 	<div class="box">
-		<form method="post" action="#">
+		<form method="post" action="https://formspree.io/getintouch@sjmorningstar.com">
 			<div class="row uniform half collapse-at-2">
 				<div class="6u">
 					<input type="text" name="name" id="name" value="" placeholder="Name" />
@@ -20,7 +20,7 @@ title: Contact
 			</div>
 			<div class="row uniform half">
 				<div class="12u">
-					<input type="text" name="subject" id="subject" value="" placeholder="Subject" />
+					<input type="text" name="topic" id="subject" value="" placeholder="Subject" />
 				</div>
 			</div>
 			<div class="row uniform half">
@@ -35,6 +35,16 @@ title: Contact
 					</ul>
 				</div>
 			</div>
+			<div class="row uniform">
+				<div class="12u">
+					<div class="align-center">
+						<i>Kindly not share any sensitive information.</i>
+					</div>
+				</div>
+			</div>
+			<input type="hidden" name="_next" value="/thankyou/" />
+			<input type="hidden" name="_subject" value="Mail from SJ-MorningStar website" />
+			<input type="text" name="_gotcha" style="display:none" />
 		</form>
 	</div>
 </section>
