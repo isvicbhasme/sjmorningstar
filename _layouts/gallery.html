@@ -38,5 +38,21 @@ layout: default
 {% endif %}
 </section>
 <script>
-  jQuery('.gallery').colorbox({rel:"gallery", transition:"fade"});
+	jQuery(document).ready(function () {
+		var cboxOptions = {
+			rel:"gallery",
+			transition:"fade",
+			maxWidth:"90%",
+			maxHeight:"90%"
+		}
+
+		$('.gallery').colorbox(cboxOptions);
+
+		$(window).resize(function(){
+		    $.colorbox.resize({
+		      width: cboxOptions.maxWidth,
+		      height: cboxOptions.maxHeight
+		    });
+		});
+  });
 </script>
