@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<section id="main" class="container">
+<header>
+	<h2>{{page.title}}</h2>
+	<p>A generic page for every non-generic situation.</p>
+</header>
+{% assign isGalleryPresent = page.images | size %}
+{% if isGalleryPresent > 0 %}
+	<div class="row">
+		<div class="12u">
+	<section class="box">
+	<h3>Text</h3>
+					<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+					This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+					This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+
+					<hr />
+	<div class="box alt">
+		<div class="row no-collapse half uniform">
+		{% for image in page.images %}
+			<div class="3u">
+			<div class="image fit">
+				<a class="gallery image fit" href="{{site.galleryrootdir}}/{{image}}" title="Me and my grandfather on the Ohoopee.">
+					<img src="{{site.galleryrootdir}}/{{image}}"/>
+				</a>
+				</div>
+			</div>
+		{% endfor %}
+		</div>
+	</div>
+	</section>
+	</div>
+	</div>
+{% endif %}
+</section>
+<script>
+  jQuery('.gallery').colorbox({rel:"gallery", transition:"fade"});
+</script>

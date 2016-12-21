@@ -52,14 +52,20 @@ isLanding: true
 		
 	<div class="row">
 
+		{% assign isodd = site.storeitems | size | modulo: 2 %}
+		{% assign lastitem = site.storeitems.last %}
 		{% for card in site.storeitems %}
+			{% if isodd > 0 and lastitem.title == card.title %}
+			<div class="-3u 6u">
+			{% else %}
 			<div class="6u">
+			{% endif %}
 				<section class="box special">
 					<span class="image featured"><img src="{{ card.imagecard }}" /></span>
 					<h3>{{ card.title }}</h3>
 					<p>{{ card.description }}</p>
 					<ul class="actions">
-						<li><a href="#" class="button alt">See More</a></li>
+						<li><a href="{{ card.link }}" class="button alt">See More</a></li>
 					</ul>
 				</section>
 			</div>

@@ -7,12 +7,13 @@ orgdescription: |
   We specialize in planning spiritual events
   and personalized spiritual merchandises such
   as hand-made greeting cards, candles and many more.
+galleryrootdir: /images/gallery
 
 sass:
   sass_dir: _sass
 
-# Contact
-tel: +1234567890
+#Contact
+tel: +91-9620296309
 social:
   # twitter: https://twitter.com/<username>
   # github: https://github.com/<username>
