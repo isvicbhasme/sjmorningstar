@@ -1,6 +1,8 @@
 ---
 layout: gallery
-title: Baby Tees
+title: Gallery
+heading: Baby Tees
+subheading: sub heading
 permalink: /gallery/babytees
 images:
   - babytees/1.jpg

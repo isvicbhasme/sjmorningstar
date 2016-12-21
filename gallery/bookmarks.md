@@ -1,4 +1,7 @@
 ---
 layout: gallery
-title: Bookmarks
+title: Gallery
+heading: Bookmarks
+subheading: sub heading
+permalink: /gallery/bookmarks
 ---

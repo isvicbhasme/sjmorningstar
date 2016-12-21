@@ -1,4 +1,7 @@
 ---
 layout: gallery
-title: Greeting cards
+title: Gallery
+heading: Greeting cards
+subheading: sub heading
+permalink: /gallery/greetingcards
 ---

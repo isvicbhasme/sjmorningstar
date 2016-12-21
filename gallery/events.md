@@ -1,4 +1,7 @@
 ---
 layout: gallery
-title: Events
+title: Gallery
+heading: Events
+subheading: sub heading
+permalink: /gallery/events
 ---
