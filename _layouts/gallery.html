@@ -20,17 +20,26 @@ layout: default
 		<p>{{ content }}</p>
 		<hr />
 	<div class="box alt">
-		<div class="row no-collapse half uniform">
+
+		{% assign number = 0 %}
 		{% for image in page.images %}
-			<div class="3u">
+		{% assign colIndex = number | modulo:3 %}
+		{% if colIndex == 0 %}
+		<div class="row no-collapse half uniform">
+		{% endif %}
+			<div class="4u">
 			<div class="image fit">
 				<a class="gallery image fit" href="{{site.galleryrootdir}}/{{image}}">
 					<img src="{{site.galleryrootdir}}/{{image}}"/>
 				</a>
 				</div>
 			</div>
-		{% endfor %}
+		{% if colIndex == 2 %}
 		</div>
+		{% endif %}
+		{% assign number = number | plus:1 %}
+		{% endfor %}
+
 	</div>
 	</section>
 	</div>
