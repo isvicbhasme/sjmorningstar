@@ -11,38 +11,54 @@ layout: default
 {% if isGalleryPresent > 0 %}
 	<div class="row">
 		<div class="12u">
-	<section class="box">
-	<!-- <h3>Text</h3> -->
-					<!-- <p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-					This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-					This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p> -->
-
-		<p>{{ content }}</p>
-		<hr />
-	<div class="box alt">
-
-		{% assign number = 0 %}
-		{% for image in page.images %}
-		{% assign colIndex = number | modulo:3 %}
-		{% if colIndex == 0 %}
-		<div class="row no-collapse half uniform">
-		{% endif %}
-			<div class="4u">
-			<div class="image fit">
-				<a class="gallery image fit" href="{{site.galleryrootdir}}/{{image}}">
-					<img src="{{site.galleryrootdir}}/{{image}}"/>
-				</a>
+			<section class="box">
+				<p>{{ content }}</p>
+				<hr />
+				<div class="box alt">
+					{% assign number = 0 %}
+					{% for pic in page.images %}
+					{% if pic.orientation != "portrait" %}
+					{% continue %}
+					{% endif %}
+					{% assign colIndex = number | modulo:3 %}
+					{% if colIndex == 0 %}
+					<div class="row no-collapse half uniform">
+					{% endif %}
+						<div class="4u">
+							<a class="gallery image fit" href="{{site.galleryrootdir}}/{{pic.image}}">
+								<img src="{{site.galleryrootdir}}/{{pic.thumb}}"/>
+							</a>
+						</div>
+					{% if colIndex == 2 %}
+					</div>
+					{% endif %}
+					{% assign number = number | plus:1 %}
+					{% endfor %}
 				</div>
-			</div>
-		{% if colIndex == 2 %}
+				</br>
+				<div class="box alt">
+					{% assign number = 0 %}
+					{% for pic in page.images %}
+					{% if pic.orientation != "landscape" %}
+					{% continue %}
+					{% endif %}
+					{% assign colIndex = number | modulo:3 %}
+					{% if colIndex == 0 %}
+					<div class="row no-collapse half uniform">
+					{% endif %}
+						<div class="2u">
+							<a class="gallery image fit" href="{{site.galleryrootdir}}/{{pic.image}}">
+								<img src="{{site.galleryrootdir}}/{{pic.thumb}}"/>
+							</a>
+						</div>
+					{% if colIndex == 2 %}
+					</div>
+					{% endif %}
+					{% assign number = number | plus:1 %}
+					{% endfor %}
+				</div>
+			</section>
 		</div>
-		{% endif %}
-		{% assign number = number | plus:1 %}
-		{% endfor %}
-
-	</div>
-	</section>
-	</div>
 	</div>
 {% endif %}
 </section>
@@ -51,8 +67,8 @@ layout: default
 		var cboxOptions = {
 			rel:"gallery",
 			transition:"fade",
-			maxWidth:"90%",
-			maxHeight:"90%"
+			maxWidth:"85%",
+			maxHeight:"85%"
 		}
 
 		$('.gallery').colorbox(cboxOptions);
