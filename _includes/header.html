@@ -24,10 +24,12 @@
 							<li><a href="#">Option Four</a></li>
 						</ul>
 					</li>
+					{% for item in site.storeitems %}
+					<li><a href="{{ item.link }}">{{ item.title }}</a></li>
+					{% endfor %}
 				</ul>
 			</li>
 			<li><a href="/contact/">Contact</a></li>
-			<!-- <li><a href="#" class="button">Sign Up</a></li> -->
 		</ul>
 	</nav>
 </header>
