@@ -14,7 +14,7 @@ layout: default
 			<section class="box">
 				<p>{{ content }}</p>
 				<hr />
-				<div class="box alt">
+				<div id="effect-1" class="box alt effects clearfix">
 					{% assign number = 0 %}
 					{% for pic in page.images %}
 					{% if pic.orientation != "portrait" %}
@@ -25,9 +25,16 @@ layout: default
 					<div class="row no-collapse half uniform">
 					{% endif %}
 						<div class="4u">
-							<a class="gallery image fit" href="{{site.galleryrootdir}}/{{pic.image}}">
+							<!-- <a class="gallery image fit" href="{{site.galleryrootdir}}/{{pic.image}}">
 								<img src="{{site.galleryrootdir}}/{{pic.thumb}}"/>
-							</a>
+							</a> -->
+							<div class="image fit img">
+				                <img src="{{site.galleryrootdir}}/{{pic.thumb}}" alt="">
+				                <div class="overlay">
+				                    <a href="{{site.galleryrootdir}}/{{pic.image}}" class="gallery expand" style="border-bottom:none">Click here to enlarge</a>
+				                    <a class="close-overlay hidden">x</a>
+				                </div>
+				            </div>
 						</div>
 					{% if colIndex == 2 %}
 					</div>
@@ -47,9 +54,16 @@ layout: default
 					<div class="row no-collapse half uniform">
 					{% endif %}
 						<div class="2u">
-							<a class="gallery image fit" href="{{site.galleryrootdir}}/{{pic.image}}">
+							<!-- <a class="gallery image fit" href="{{site.galleryrootdir}}/{{pic.image}}">
 								<img src="{{site.galleryrootdir}}/{{pic.thumb}}"/>
-							</a>
+							</a> -->
+							<div class="image fit img">
+				                <img src="{{site.galleryrootdir}}/{{pic.thumb}}" alt="">
+				                <div class="overlay">
+				                    <a href="{{site.galleryrootdir}}/{{pic.image}}" class="gallery expand" style="border-bottom:none">Click here to enlarge</a>
+				                    <a class="close-overlay hidden">x</a>
+				                </div>
+				            </div>
 						</div>
 					{% if colIndex == 2 %}
 					</div>
@@ -62,6 +76,7 @@ layout: default
 	</div>
 {% endif %}
 </section>
+<script src="/js/modernizr.js"></script>
 <script>
 	jQuery(document).ready(function () {
 		var cboxOptions = {
@@ -74,10 +89,34 @@ layout: default
 		$('.gallery').colorbox(cboxOptions);
 
 		$(window).resize(function(){
-		    $.colorbox.resize({
-		      width: cboxOptions.maxWidth,
-		      height: cboxOptions.maxHeight
-		    });
+		    $.colorbox.resize(cboxOptions);
 		});
+		if (Modernizr.touch) {
+            // show the close overlay button
+            $(".close-overlay").removeClass("hidden");
+            // handle the adding of hover class when clicked
+            $(".img").click(function(e){
+                if (!$(this).hasClass("hover")) {
+                    $(this).addClass("hover");
+                }
+            });
+            // handle the closing of the overlay
+            $(".close-overlay").click(function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                if ($(this).closest(".img").hasClass("hover")) {
+                    $(this).closest(".img").removeClass("hover");
+                }
+            });
+        } else {
+            // handle the mouseenter functionality
+            $(".img").mouseenter(function(){
+                $(this).addClass("hover");
+            })
+            // handle the mouseleave functionality
+            .mouseleave(function(){
+                $(this).removeClass("hover");
+            });
+        }
   });
 </script>

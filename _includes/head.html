@@ -8,6 +8,10 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<!--[if lte IE 8]><script src="/css/ie/html5shiv.js"></script><![endif]-->
+		{% if page.url contains "/gallery/" %}
+			<link rel="stylesheet" href="/css/gallery-base.css" />
+			<link rel="stylesheet" href="/css/gallery-style.css" />
+		{% endif %}
 		<script src="/js/jquery.min.js"></script>
 		<script src="/js/jquery.dropotron.min.js"></script>
 		<script src="/js/jquery.scrollgress.min.js"></script>
