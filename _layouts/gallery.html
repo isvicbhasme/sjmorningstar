@@ -25,9 +25,6 @@ layout: default
 					<div class="row no-collapse half uniform">
 					{% endif %}
 						<div class="4u">
-							<!-- <a class="gallery image fit" href="{{site.galleryrootdir}}/{{pic.image}}">
-								<img src="{{site.galleryrootdir}}/{{pic.thumb}}"/>
-							</a> -->
 							<div class="image fit img">
 				                <img src="{{site.galleryrootdir}}/{{pic.thumb}}" alt="">
 				                <div class="overlay">
@@ -43,20 +40,17 @@ layout: default
 					{% endfor %}
 				</div>
 				</br>
-				<div class="box alt">
+				<div id="effect-1" class="box alt effects clearfix">
 					{% assign number = 0 %}
 					{% for pic in page.images %}
 					{% if pic.orientation != "landscape" %}
 					{% continue %}
 					{% endif %}
-					{% assign colIndex = number | modulo:3 %}
+					{% assign colIndex = number | modulo:4 %}
 					{% if colIndex == 0 %}
 					<div class="row no-collapse half uniform">
 					{% endif %}
-						<div class="2u">
-							<!-- <a class="gallery image fit" href="{{site.galleryrootdir}}/{{pic.image}}">
-								<img src="{{site.galleryrootdir}}/{{pic.thumb}}"/>
-							</a> -->
+						<div class="3u">
 							<div class="image fit img">
 				                <img src="{{site.galleryrootdir}}/{{pic.thumb}}" alt="">
 				                <div class="overlay">
@@ -65,7 +59,7 @@ layout: default
 				                </div>
 				            </div>
 						</div>
-					{% if colIndex == 2 %}
+					{% if colIndex == 3 %}
 					</div>
 					{% endif %}
 					{% assign number = number | plus:1 %}
