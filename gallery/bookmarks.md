@@ -2,7 +2,7 @@
 layout: gallery
 title: Gallery
 heading: Bookmarks
-subheading: sub heading
+subheading: 3D Book marks – takeaways and gift tags with verses
 permalink: /gallery/bookmarks
 images:
   - image: bookmarks/1.jpg
@@ -27,3 +27,5 @@ images:
     thumb: bookmarks/7-thumb.jpg
     orientation: landscape
 ---
+### What are these?
+Designed to be used as book marks or take aways or return gifts with scriptures on them, these have been hand-crafted with embossing techniques, modelling paste, beautiful ribbons and stencils to suit the textured papers.

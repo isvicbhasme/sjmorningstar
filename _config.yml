@@ -1,4 +1,4 @@
-#Global variables
+# Global variables
 sitename: Morning Star
 sitesecondname: Sharing Jesus
 sitetagline: Another fine responsive site template freebie by HTML5 UP
@@ -12,7 +12,7 @@ galleryrootdir: /images/gallery
 sass:
   sass_dir: _sass
 
-#Contact
+# Contact
 tel: +91-9620296309
 social:
   # twitter: https://twitter.com/<username>
@@ -22,6 +22,9 @@ social:
   instagram: https://www.instagram.com/morningstarsharingjesus
   email: info@sjmorningstar.com
 
-#Collections
+# Collections
 collections:
   storeitems:
+
+# Conversion
+markdown: kramdown

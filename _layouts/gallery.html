@@ -13,11 +13,19 @@ layout: default
 		<div class="12u">
 			<section class="box">
 				<p>{{ content }}</p>
-				<hr />
+				<ul class="actions" style="text-align: center">
+					<li><a href="/contact/" class="button special">Share your thoughts</a></li>
+					<!-- <li><a href="#" class="button">Learn More</a></li> -->
+				</ul>
+				</section>
+				<section class="box">
+				{% assign showAndMore = false %}
+				<h3>A few samples</h3>
 				<div id="effect-1" class="box alt effects clearfix">
 					{% assign number = 0 %}
 					{% for pic in page.images %}
 					{% if pic.orientation != "portrait" %}
+					{% assign showAndMore = true %}
 					{% continue %}
 					{% endif %}
 					{% assign colIndex = number | modulo:3 %}
@@ -39,6 +47,10 @@ layout: default
 					{% assign number = number | plus:1 %}
 					{% endfor %}
 				</div>
+				</br>
+				{% if showAndMore == true %}
+				<h3>And more samples...</h3>
+				{% endif %}
 				</br>
 				<div id="effect-1" class="box alt effects clearfix">
 					{% assign number = 0 %}

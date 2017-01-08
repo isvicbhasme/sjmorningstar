@@ -2,7 +2,7 @@
 layout: gallery
 title: Gallery
 heading: Greeting cards
-subheading: sub heading
+subheading: Cards with scriptures are the best to express your love
 permalink: /gallery/greetingcards
 images:
   - image: greetingcards/1.jpg
@@ -72,3 +72,29 @@ images:
     thumb: greetingcards/22-thumb.jpg
     orientation: landscape
 ---
+
+### How are they made?
+These handmade greeting cards *(2 layered and above)* personalized with Bible verses are crafted with the following and many other techniques.
+
+{::options parse_block_html="true" /}
+<div class="row">
+  <div class="4u">
+  - Embossing powders
+  - Distressing
+  - Textured paper
+  - Stencils
+  </div>
+  <div class="4u">
+  - Die cuts
+  - Pop ups
+  - Ribbons
+  - Various stamps
+  </div>
+  <div class="4u">
+  - Embossing
+  - Shaker cards
+  - Modelling paste
+  </div>
+</div>
+
+Every card can be customized according to your needs and so they help to leave a lasting impression for your loved ones**!** <i class="fa fa-gift" style="color:REBECCAPURPLE" aria-hidden="true"></i>
